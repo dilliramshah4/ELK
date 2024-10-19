@@ -1,0 +1,18 @@
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elastic-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/elastic-archive-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
+
+sudo apt update
+
+sudo apt install filebeat
+
+sudo systemctl enable filebeat
+sudo systemctl start filebeat
+
+sudo systemctl status filebeat
+
+
+
+sudo nano /etc/filebeat/filebeat.yml
+sudo filebeat test config
+sudo systemctl restart filebeat
