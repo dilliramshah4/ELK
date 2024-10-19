@@ -1,1 +1,8 @@
+sudo apt install kibana -y
+sudo systemctl enable kibana
+sudo systemctl start kibana
+
+
+
+sudo nano /etc/kibana/kibana.yml               and configure
 
